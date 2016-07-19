@@ -26,13 +26,22 @@ byte gamepadLayout = GL_NINTENDO_NES;
 
 void setup() 
 {
-  byte mcPins[] = {10,11,12};
+  byte pin1 = 2;
+  byte pin2 = 3;
+  byte pin3 = 4;
+  byte pin4 = 5;
+  byte pin5 = 6;
+  byte pin6 = 7;
+  byte pin7 = 8;
+  byte pin8 = 9;
+  byte pin9 = 10;
+  byte mcPins[] = {pin1,pin2,pin3,pin4,pin5,pin6,pin7,pin8,pin9};
   Serial.begin(9600);
 
   while(!Serial) { }
   pinMode(ledPin, OUTPUT);
   digitalWrite(ledPin, HIGH);
-  gp1.begin(gamepadLayout, mcPins);
+  gp1.begin(gamepadLayout, mcPins, true);
   Serial.println("Code has " + String(codeSize) + " chars.");
   Serial.print("Enter Code: ");
 }
