@@ -74,11 +74,11 @@ You can switch between these two modes by using the fullPinout parameter.
 
 ## 1. Primary Methods ##
 
-**void Gamepad.begin(byte gamepadLayout, byte mcPins[], __bool fullPinout=false__)**
+**void Gamepad.begin(byte gamepadLayout, byte mcPins[], _bool fullPinout=false_)**
 
 Setup the basic variables and call **Gamepad.setConnector()** with the given parameters.
 
-**void Gamepad.setConnector(byte gamepadLayout, byte mcPins[], __bool fullPinout=false__)**
+**void Gamepad.setConnector(byte gamepadLayout, byte mcPins[], _bool fullPinout=false_)**
 
 Configures the virtual gameport connector. By default the connector only uses the pins, which are necessary to read the gamepad. Unused pins on the connector will be ignored and for VCC / GND no digital pins will be used, therefore if the gamepad need a power supply use an external source or the designated VCC / GND pins from the Arduino.
 If you use fullPinout=true all pins from the connector / gamepad must be connected to the arduino, but in this case it's easier to switch the gamepadLayout during runtime.
@@ -103,7 +103,7 @@ Returns the state of all buttons as an unsigned long variable. The bit for every
 
 These methods are used by the aforementioned methods and are normally not needed if you just want to read a gamepad. 
 
-**void Gamepad.setPin(byte arrayID, byte pin, byte modePin, __byte initState=false__)**
+**void Gamepad.setPin(byte arrayID, byte pin, byte modePin, _byte initState=false_)**
 
 Assign an arduino pin to a pin from the virtual connector port.
 
@@ -119,7 +119,7 @@ A wrapper for **digitalWrite()**.
 
 A wrapper for **digitalRead()**.
 
-**void Gamepad.writeButtonState(byte btnBit, byte state, __bool converseLogic=false__, __bool saveInBuffer=true__)**
+**void Gamepad.writeButtonState(byte btnBit, byte state, *bool converseLogic=false*, *bool saveInBuffer=true*)**
 
 Sets the state of a button, which is a bit inside of a unsigned long variable. Such variable has 32 bits and therefore can hold 32 button states. Normally most gamepads work with active-low buttons. If you press a button a circuit will be closed and the video game system detects that a button was pressed. The Library uses the same schematic for storing a button states, but if a gamepad uses buttons with is active-high you can set *converseLogic=true* so **Gampead.writeButtonState()** will reverse the state, before it will be stored. With saveInBuffer you can decide if the state will be added to the internal button buffer.See the “**Constants Reference list**” for the bit names.
 
