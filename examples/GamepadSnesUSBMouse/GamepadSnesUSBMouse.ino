@@ -11,8 +11,8 @@
  * |  B         | Left mouse mutton   | 
  * |  A         | Right mouse button  | 
    |  SELECT    | Reset sensivitiy    |
- * |  Y         | Sensitivtiy + 1     |
- * |  X         | Sensitivtiy - 1     |
+ * |  Y         | Sensitivtiy - 1     |
+ * |  X         | Sensitivtiy + 1     |
  * |  R         | Acceleration        |
  * |  L         | Middle mouse button |
  * |----------------------------------|
