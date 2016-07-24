@@ -1,7 +1,7 @@
 /*
  * A example for using a SNES Gampead as an mouse.  
  *  
- * Tested with an Arduino Unoa and ArduinoIDE 1.6.9.
+ * Tested with an Arduino Micro and ArduinoIDE 1.6.9.
  * 
  * |----------------------------------|
  * |  Button    |  Description        |
