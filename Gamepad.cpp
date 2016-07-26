@@ -502,8 +502,6 @@ void Gamepad::_readButtonsSNES()
 	// Check for Mouse
 	if(this->getButtonState(SNES_M_FOUND) == LOW) 
 	{
-		delayMicroseconds(2500);
-		
 		// Cycle 17# Mouse Y-Direction LOW = UP / HIGH = DOWN
 		this->writePinState(NES_P2_CLOCK, HIGH);
 		this->writePinState(NES_P2_CLOCK, LOW);
@@ -523,7 +521,7 @@ void Gamepad::_readButtonsSNES()
 		this->writeButtonState(SNES_M_DIRX, this->readPinState(NES_P4_DATA));		
 		
 		// Z motion bit 6 to Z motion bit 0
-		for(int z=25;z<33;z++)
+		for(int z=25;z<32;z++)
 		{
 			this->writePinState(NES_P2_CLOCK, HIGH);
 			this->writePinState(NES_P2_CLOCK, LOW);
